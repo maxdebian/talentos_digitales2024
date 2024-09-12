@@ -1,0 +1,45 @@
+git add <file>  |    .
+
+git commit -m "Mensaje"
+
+git push origin "nombre de la rama actual"
+
+
+--------------------
+git branch "nombre de la rama nueva" 
+
+git checkout "nombre de la rama nueva"
+
+
+--------------------
+
+
+git checkout -b "nombre de la rama nueva"  // crea una rama y me mueve a esa rama
+
+git checkout "nombre de la rama"  // mueve a la rama indicada
+
+git checkout <File>    |      .
+
+git branch
+
+git log // Muestra el log de nuestras ramas
+
+git pull origin "nombre de la rama "   //actualiza nuestra rama
+
+// mergear
+
+git pull origin "Nombre de la rama a mergear"    // mergear una rama
+
+
+1 posicionarme en la rama a actualizar   /// develop
+2 actualizar con la rama en cuestion // #1
+
+
+// eliminar rama local
+git branch -d "nombre de la rama"
+
+git branch -d "nombre de la rama" // eliminacion forzada
+
+git push origin --delete "nomrbe de la rama"  // eliminacion de rama remota
+
+
