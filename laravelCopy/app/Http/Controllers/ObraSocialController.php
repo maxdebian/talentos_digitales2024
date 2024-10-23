@@ -45,7 +45,7 @@ class ObraSocialController extends Controller
             ]);
             if($obraSocial){
                 DB::commit();
-                return redirect('/');
+                return redirect('/home');
             }
 
         } catch (\Exception $e) {

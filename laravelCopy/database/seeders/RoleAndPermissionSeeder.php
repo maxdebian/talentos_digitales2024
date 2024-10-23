@@ -23,9 +23,11 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name'=>'obras_sociales.show']);
         Permission::create(['name'=>'obras_sociales.update']);
         Permission::create(['name'=>'obras_sociales.destroy']);
+        Permission::create(['name'=>'obras_sociales.store']);
         $permissions = Permission::all();
         $roleAdmin->syncPermissions($permissions);
         $roleClient->syncPermissions($permissions);
+
         $user = User::where('name','admin')->first();
         $user->assignRole($roleAdmin);
     }
