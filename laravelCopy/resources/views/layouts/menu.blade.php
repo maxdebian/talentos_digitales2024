@@ -48,13 +48,14 @@
               @endif
 
 
-
-              <li class="nav-item">
-                <a href="{{ route('obras_sociales.crearObraSocial') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List</p>
-                </a>
-              </li>
+              @can('obras_sociales.index')
+                <li class="nav-item">
+                    <a href="{{ route('obras_sociales.crearObraSocial') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List</p>
+                    </a>
+                </li>
+              @endcan
 
             </ul>
           </li>
@@ -109,6 +110,7 @@
 
             </ul>
           </li>
+
            <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -157,6 +159,7 @@
 
             </ul>
           </li>
+
            <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -172,12 +175,14 @@
                   <p>New</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('user.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List</p>
-                </a>
-              </li>
+
+                <li class="nav-item">
+                  <a href="{{ route('user.index') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List</p>
+                  </a>
+                </li>
+
 
             </ul>
           </li>

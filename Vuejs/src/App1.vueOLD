@@ -1,0 +1,107 @@
+<template>
+  <div>
+    <h1>Estamos en vueJS con Laravel 11</h1>
+<!--     <p class="colorRojo" >Quien sos? {{ saludo1 }} </p>
+    <div v-html="saludo"></div>
+    <p v-bind:style="color"> {{ saludo1 }} </p>
+    <p :style="color"> {{ saludo1 }} </p>
+    <a :href="urlGoogle">Google</a>
+    <div v-if="miDinero>100">
+      <p>Tengo dinero</p>
+    </div>
+    <div v-else-if="miDinero>0">
+      <p>tengo algo</p>
+    </div>
+    <div v-else>
+      <p>No tengo dinero</p>
+    </div>
+    <div v-show="miDinero>100">
+      <p>Tengo dinero VShow</p>
+    </div> -->
+<!--     <p :class="(miDinero>100) ? 'colorVerde' : (miDinero>0) ? 'colorAmarillo' : 'colorRojo'">Estados de mis ahorros</p>
+    <p>{{ letras }}</p> -->
+    <!-- <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li> 
+      <li v-for="(letra,indice) in letras" :key="indice">{{ indice+1 }} - {{ letra }}</li>
+    </ul> -->
+   <!--  <ol>
+      <li>a</li>
+      <li>b</li>
+    </ol> -->
+   <!--  <ul>
+      <li v-for="(miPersona,property,index) in persona" :key="miPersona.id"> 
+         {{ property }}
+         {{ miPersona }}
+         {{ index }}
+         </li>
+    </ul> -->
+<!-- 
+    <p v-for="(numeros,index) in 10" :key="index"> {{ numeros }}</p> -->
+    <!-- <div v-for="(lenguaje,index) in lenguajes" :key="index">
+      <p>{{ lenguaje.id }} {{ lenguaje.descripcion }} 
+        <ul>
+          <li v-for="(nivel,index2) in lenguaje.niveles" :key="index2" :class="nivel==3 ? 'colorRojo' : ''">{{ nivel }}</li>
+        </ul>
+      </p>
+    </div> -->
+    <p onclick="alert('hola')">click</p>
+    <p v-on:click="console.log('hola')">click console.log</p>
+    <p @click="console.log('hola')">click @</p>
+    <p @click="() => console.log('hola')">click @ => ()</p>
+    <p @click.right="() => console.log('click boton derecho')">click boton derecho</p>
+    <p @click.stop="() => console.log('click con stop')">click con stop</p>
+    <button @click.right.prevent="() => console.log('click con boton derecho')">Enviar</button>
+    <input type="text" @blur="console.log('fuera de foco')" @focus="console.log('focus')">
+  </div>
+</template>
+
+<script setup lang="ts">
+
+  const saludo1 = "Hola Soy maxi";
+  const saludo = "<span style='color:red'>Hola Soy maxi</span>";
+  const color = "color: red;"
+  const urlGoogle = "https://www.google.com.ar"
+  const miDinero = 200;
+  const letras = ['a','b','c','d'];
+  const persona = {
+    'id':1,
+    'nombre':'Maximiliano',
+    'apellido':'Tedesco',
+    'direccion':'Bs As 1671'
+  }
+  const lenguajes = [
+    {
+      'id':1,
+      'descripcion':'Laravel',
+      'niveles':[1,2,3]
+    },
+    {
+      'id':2,
+      'descripcion':'VueJS',
+      'niveles':[1]
+    },
+    {
+      'id':3,
+      'descripcion':'JavaScript',
+      'niveles':[2,3]
+    }
+  ]
+</script>
+
+<style scoped>
+.colorRojo{
+  color: red;
+}
+.colorVerde{
+  color: green;
+}
+.colorAmarillo{
+  background-color: blue;
+  color: yellow;
+}
+li{
+  list-style: none;
+}
+</style>

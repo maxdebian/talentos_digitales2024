@@ -1,0 +1,46 @@
+<template>
+    <div>
+        <h1>Estamos en VueJS</h1>
+        <h3> quien sos? {{ saludoApp }}</h3>
+        <h4>Mis ahorros {{ ahorro }}</h4>
+        <button @click="depositar(100)">Depositar 100</button>
+        <button @click="status = !status">Cambiar Status</button>
+    </div>
+</template>
+
+<script lang="ts">
+/*     import {ref} from 'vue';
+    const saludoApp = ref<string>("Hola Soy Maxi");
+    const ahorro = ref<number>(0)
+    const status = ref<boolean>(false)
+    const depositar = (cantidad:number)=>{
+        ahorro.value += cantidad
+        status.value = !status.value
+    }
+ */
+ import {ref} from 'vue';
+export default{
+ // Properties returned from data() become reactive state
+  // and will be exposed on `this`.
+  data() {
+    return {
+        ahorro : ref<number>(0),
+        saludoApp : ref<string>("Hola Soy Maxi"),
+        status: ref<boolean>(false)
+    }
+  },
+
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event handlers in templates.
+  methods: {
+    depositar (cantidad:number){
+        this.ahorro += cantidad
+        this.status = !this.status
+    }
+   },
+}   
+</script>
+
+<style scoped>
+
+</style>
