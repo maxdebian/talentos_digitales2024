@@ -7,6 +7,27 @@
     <div class="wrapper">
           <Navbar></Navbar>
     </div>
+    
+    <Content >  <!-- :numero="myValue" -->
+      <template #table>
+        <table>
+              <thead>
+                  <tr>Value</tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>{{ myValue }}</td>    
+                  </tr>
+              </tbody>
+          </table>
+      </template>
+
+      <template #contetTitle> 
+         {{ myValue }}
+      </template>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, unde beatae dolores, quae ipsum vel in, reiciendis tempore odio porro nihil suscipit pariatur illum. Facere consequuntur quae ducimus maxime ipsa.</p>
+      
+    </Content>
   </header>
   <router-view></router-view>
 </template>
@@ -14,6 +35,8 @@
 <script setup lang="ts">
   import { RouterLink, RouterView } from 'vue-router'
   import Navbar from './components/Navbar.vue';
+  import Content from './views/Content.vue';
+  const myValue = 100;
 </script>
 
 

@@ -1,0 +1,28 @@
+import { defineStore } from "pinia";
+
+export const useTareasStore = defineStore('tarea',{
+    state:()=>({
+        tareas:[{nombre:'Aprender Laravel',completado:false}],
+        tareasActual:null,
+        mostrarFormulario:false    
+    }),    
+    getters:{
+
+    },
+    actions:{
+        crearTarea(nombre:string){
+            this.tareas.push({nombre,completado:false});
+            /* localStorage.setItem('tareas',JSON.stringify(this.tareas)) */
+        },
+        obtenerTareas(){
+          /*   const data = localStorage.getItem('tareas')
+            if(data){
+                console.log(JSON.parse(data))
+            } */
+        },
+        eliminarTarea(index:number){
+            this.tareas = this.tareas.filter((elment,indexFilter)=>indexFilter!=index)
+        }
+    },
+    persist:true
+})
