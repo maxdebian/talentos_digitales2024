@@ -1,7 +1,9 @@
 import { defineStore } from "pinia";
-
+interface IState{
+    mensaje:String | null
+}
 export const useErrorStore = defineStore('error',{
-    state:()=>({
+    state:():IState=>({
         mensaje:null
     }),
     actions:{

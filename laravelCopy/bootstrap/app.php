@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'authJWT'       => Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+            /* 'authJWT'       => Tymon\JWTAuth\Providers\LaravelServiceProvider::class, */
             'isAdmin'      =>  App\Http\Middleware\AdminMiddleware::class,
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,

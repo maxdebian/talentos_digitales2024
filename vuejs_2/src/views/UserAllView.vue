@@ -17,7 +17,9 @@
     const users = ref<IUser[]>([]);
     onMounted(async()=>{
         const result = await fetch('https://reqres.in/api/users/')
+        console.log(result)
         const data = await result.json()
+        console.log(data);
         users.value = data.data
     })
 </script>

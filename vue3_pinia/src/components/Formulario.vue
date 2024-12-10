@@ -15,9 +15,8 @@
     const nombre = ref('');
     const {crearTarea} = useTareasStore();
     const procesarformulario = /* async */()=>{
-        /* const { valid } = await formularioRef.value!.validate();
-        console.log(valid); */
-        
+       /*  const { valid } = await formularioRef.value!.validate();
+        console.log(valid);         */ 
         crearTarea(nombre.value)
     }
     const formularioRef = ref(null) 
