@@ -13,11 +13,14 @@
 
             <template v-slot:append>
                     <v-btn><RouterLink to="/">Home</RouterLink></v-btn>
-                    <v-btn><RouterLink to="/about">About</RouterLink></v-btn>
-                    <v-btn><RouterLink to="/login">Login</RouterLink></v-btn>
+<!--                     <v-btn><RouterLink to="/about">About</RouterLink></v-btn>
+                    <v-btn><RouterLink to="/login">Login</RouterLink></v-btn> -->
                     <v-btn><RouterLink to="/login2">Login2</RouterLink></v-btn>
-                    <v-btn><RouterLink to="/register">Register</RouterLink></v-btn>
-                    <v-btn><RouterLink to="/register2">Register2</RouterLink></v-btn>
+<!--                     <v-btn><RouterLink to="/register">Register</RouterLink></v-btn>
+                    <v-btn><RouterLink to="/register2">Register2</RouterLink></v-btn> -->
+                    <v-btn><RouterLink to="/products">Products</RouterLink></v-btn>
+                    <v-btn><RouterLink to="/productStore">Create Product</RouterLink></v-btn>
+
                     <v-btn v-if="authStore.authUser" @click="logout">Logout</v-btn>
                     
         <!--             

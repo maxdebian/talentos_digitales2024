@@ -28,7 +28,7 @@ const vuetify = createVuetify({
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import App from './App.vue'
 import router from './router'
-/* import axios from 'axios' */
+import axios from 'axios' 
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -41,8 +41,7 @@ app.use(VueSweetalert2)
 window.Swal =  app.config.globalProperties.$swal;
 /* import Swal from 'sweetalert2'
 Swal.fire('message') */
-/* app.config.globalProperties.$axios = axios;
+app.config.globalProperties.$axios = axios;
 window.axios = axios 
 axios.defaults.baseURL = 'http://localhost:9000/api/' 
-axios.post('api/products'); */
 app.mount('#app')

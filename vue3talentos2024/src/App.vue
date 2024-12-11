@@ -35,7 +35,9 @@
 <script setup lang="ts">
   import { RouterLink, RouterView } from 'vue-router'
   import Navbar from './components/Navbar.vue'
-
+/*   import axios from 'axios';
+  const result = axios.get('products')
+  console.log(result) */
 </script>
 
 <style scoped>

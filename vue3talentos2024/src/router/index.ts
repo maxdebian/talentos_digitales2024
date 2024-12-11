@@ -54,7 +54,24 @@ const router = createRouter({
       path: '/register2',
       name: 'register2',
       component: () => import('../components/User/RegisterWithStore.vue'),
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('../views/ProductsView.vue'),
+    },
+    {
+      path:'/productById/:id',
+      name:'productById',
+      component: () => import('../components/Product/Product.vue'),
+    },
+    {
+      path:'/productStore',
+      name:'productStore',
+      component: () => import('../components/Product/Store.vue'),
     }
+
+    
   ],
 })
 router.beforeEach(async (to) =>{

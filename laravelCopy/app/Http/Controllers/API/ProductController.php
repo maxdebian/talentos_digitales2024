@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
+use Auth;
 class ProductController extends Controller
 {
     /**
@@ -14,43 +16,43 @@ class ProductController extends Controller
     public function index()
     {
         //return ProductResource::collection(Product::first());
-        return ProductResource::collection(Product::paginate(8));
-        //return ProductResource::collection(Product::all());
+        //return ProductResource::collection(Product::paginate(8));
+        return ProductResource::collection(Product::all());
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+ /*    public function create()
     {
         return 'Product create';
-    }
+    } */
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request):JsonResponse
     {
-        if ($request->file('product_image')) {
+        /* dd($request); */
+/*         if ($request->file('product_image')) {
             $image = $request->file('product_image');
             $type = $image->getClientOriginalExtension();
             $img = date('Y-m-d-H-i-s') .  '.' . $type;
             $image->move('image/product/', $img);
 
             $product_image = 'image/product/' . $img;
-        } else {
+        } else { */
             $product_image = '/dist/img/user2-160x160.jpg';
-        }
-
+        /* } */
         $data = [
             'description'       =>$request->description,
             'product_image'     =>$product_image,
-            'cost_price'        =>null,
-            'increase'          =>null,
-            'stock'             =>null,
+            'cost_price'        =>$request->cost_price,
+            'increase'          =>$request->increase,
+            'stock'             =>$request->stock,
             'enabled'           =>true,
-            'user_created'      =>1,
-            'user_updated'      =>1,
+            'user_created'      =>Auth::user()->id,
+            'user_updated'      =>Auth::user()->id,
         ];
 
         $product = Product::create($data);

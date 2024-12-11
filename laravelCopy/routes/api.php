@@ -34,7 +34,13 @@ Route::get('/user', function (Request $request) {
 
 //Route::resource('products', ProductController::class);
 Route::resource('test', TestController::class);
-Route::apiResource('products',ProductController::class)/* ->middleware('auth:sanctum') */ ;
+
+
+//Route::apiResource('products',ProductController::class)
+Route::get('products',[ProductController::class,'index']);
+Route::post('product/store',[ProductController::class,'store'])->middleware('auth:sanctum');
+
+/* ->middleware('auth:sanctum') */ ;
 
 /*
 Route::get('/test',function(){

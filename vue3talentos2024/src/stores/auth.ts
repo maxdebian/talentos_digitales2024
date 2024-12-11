@@ -18,7 +18,7 @@ export const useAuthStore = defineStore('auth',{
             //const x = await this.getToken();
             
             try{
-                const result = await axios.post('http://localhost:9000/api/login',form);
+                const result = await axios.post('login',form);
 /*                 console.log(result); 
                 debugger */
                 if(result.status == 200){
@@ -34,7 +34,7 @@ export const useAuthStore = defineStore('auth',{
         },
         async register(form){
             //await this.getToken();
-            await axios.post('http://localhost:9000/api/register',form).then(
+            await axios.post('register',form).then(
                 (res)=>{
                     Swal.fire({
                         position: "top-end",
@@ -57,7 +57,7 @@ export const useAuthStore = defineStore('auth',{
         async logout(){
 /*             console.log(this.token) */
 
-             const result = await axios.post('http://localhost:9000/api/logout',this.authUser, {
+             const result = await axios.post('logout',this.authUser, {
                 headers: {
                   'Authorization': `Bearer ${this.token}`
                 }}); 
