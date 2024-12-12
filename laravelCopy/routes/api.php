@@ -7,6 +7,7 @@ use App\Http\Controllers\API\LogoutController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\TestController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CartController;
 
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
@@ -39,6 +40,8 @@ Route::resource('test', TestController::class);
 //Route::apiResource('products',ProductController::class)
 Route::get('products',[ProductController::class,'index']);
 Route::post('product/store',[ProductController::class,'store'])->middleware('auth:sanctum');
+Route::apiResource('carts',CartController::class)->middleware('auth:sanctum');
+
 
 /* ->middleware('auth:sanctum') */ ;
 

@@ -34,16 +34,16 @@ class ProductController extends Controller
     public function store(Request $request):JsonResponse
     {
         /* dd($request); */
-/*         if ($request->file('product_image')) {
+        if ($request->file('product_image')) {
             $image = $request->file('product_image');
             $type = $image->getClientOriginalExtension();
             $img = date('Y-m-d-H-i-s') .  '.' . $type;
             $image->move('image/product/', $img);
 
             $product_image = 'image/product/' . $img;
-        } else { */
+        } else {
             $product_image = '/dist/img/user2-160x160.jpg';
-        /* } */
+        }
         $data = [
             'description'       =>$request->description,
             'product_image'     =>$product_image,
